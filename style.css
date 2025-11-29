@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(244, 240, 235);
+}
+
+.navbar{
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 10px;
+}
+
+
+.logo{
+    color: rgb(217, 17, 17);
+    font-weight: 900;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+}
+
+.buynowbtn{
+    border: 0;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    background-color: rgb(217, 17, 17);
+    padding: 10px 15px;
+    color: aliceblue;
+}
+
+.buynowbtn:hover{
+    background-color: brown;
+}
+
+.buynowbtn:active{
+    background-color: burlywood;
+}
+
+
+.hero-section{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    .hero-img{
+        width:90%;
+        max-height: 500px;
+        object-fit: contain;
+        min-width: 250px;
+        max-width: 400px;
+        border-radius: 8px;
+        scale: calc(0.99);
+    }
+
+    .hero-img:hover{
+        scale: calc(1);
+    }
+}
+
+
+.features{
+    padding:10px 180px;
+    margin: 0 0 30px 0;
+    h2{
+        color: brown;
+        font-size: 3rem;
+    }
+
+    article{
+        color:chocolate;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+}
+
+.testimonials{
+    .cards{
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    }
+    h1{
+        color: rgb(193, 42, 22);
+        text-align: center;
+    }
+    .card{
+        width: 250px;
+        height: 320px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: rgb(242, 186, 123);
+        h3{
+            color: rgb(12, 3, 8);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        span{
+            font-size: 1.2;
+            color: rgb(228, 55, 8);
+        }
+    }
+}
+
+footer{
+    background-color:brown;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+
+    a{
+        text-decoration: none;
+        color: rgb(207, 184, 252);
+    }
+    a:hover{
+        color: blanchedalmond;
+    }
+}
+
+
+@media (max-width:600px) {
+    .features{
+        padding: 10px !important;
+        margin: 0;
+    }
+
+    .testimonials{
+        .cards{
+            padding: 20px 0;
+            height: max-content;
+            gap: 10px;
+            flex-direction: column;
+        }
+    }
+}
