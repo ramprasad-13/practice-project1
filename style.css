@@ -7,7 +7,13 @@
 body{
     background-color: rgb(244, 240, 235);
 }
-
+header {
+    position: sticky; /* The magic property */
+    top: 0;           /* Stick to the very top */
+    background-color: rgb(244, 240, 235); /* Match body bg so content doesn't show through */
+    z-index: 1000;    /* Ensure it sits on top of everything else */
+    padding: 10px 0;  /* Add some spacing */
+}
 .navbar{
     display: flex;
     height: 60px;
@@ -42,11 +48,23 @@ body{
     background-color: burlywood;
 }
 
+.hero-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 180px;
+    color: rgb(134, 4, 4);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+}
 
 .hero-section{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.2rem;
-    height: 600px;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -83,10 +101,26 @@ body{
     }
 }
 
+.features .feature-grid {
+    display: grid;
+    /* This creates 3 equal columns automatically */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-top: 20px;
+
+    .feature-card{
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: 1px solid brown;
+        background-color: beige;
+    }
+}
+
+
 .testimonials{
     .cards{
     display: flex;
-    height: 400px;
+    min-height: 400px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -96,8 +130,8 @@ body{
         text-align: center;
     }
     .card{
-        width: 250px;
-        height: 320px;
+        max-width: 250px;
+        max-height: 320px;
         padding: 20px;
         border-radius: 8px;
         background-color: rgb(242, 186, 123);
@@ -133,9 +167,21 @@ footer{
 
 
 @media (max-width:600px) {
+    .hero-text{
+        font-size: 1.3rem;
+        flex-direction: row;
+        padding: 10px;
+
+        justify-content: space-between;
+    }
     .features{
         padding: 10px !important;
         margin: 0;
+    }
+
+    .features .feature-grid {
+        /* On mobile, switch to 1 column */
+        grid-template-columns: 1fr; 
     }
 
     .testimonials{
